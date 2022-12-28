@@ -19,6 +19,7 @@ func main(){
 	}
 	log.Printf("Listening on %s\n",address)
 	serverInstance := grpc.NewServer()
+	pb.RegisterAddServiceServer(serverInstance,&Server{})
 	if err=serverInstance.Serve(listener);err!=nil{
 		log.Fatalf("Failed to listen on %v\n",err)
 	}
