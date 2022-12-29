@@ -17,4 +17,5 @@ func main() {
 	defer connection.Close()
 	client := pb.NewCalculatorServiceClient(connection)
 	addFunction(client)
+	displayPrimes(client)
 }
