@@ -15,6 +15,6 @@ func main() {
 		log.Fatalf("Failed to connect: %v\n",err)
 	}
 	defer connection.Close()
-	client := pb.NewAddServiceClient(connection)
+	client := pb.NewCalculatorServiceClient(connection)
 	addFunction(client)
 }

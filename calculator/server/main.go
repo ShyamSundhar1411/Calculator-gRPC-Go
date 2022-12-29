@@ -10,8 +10,9 @@ import (
 var address string = "0.0.0.0:5501"
 
 type Server struct{
-	pb.AddServiceServer
+	pb.CalculatorServiceServer
 }
+
 func main(){
 	listener,err := net.Listen("tcp",address)
 	if err!=nil{
@@ -19,7 +20,7 @@ func main(){
 	}
 	log.Printf("Listening on %s\n",address)
 	serverInstance := grpc.NewServer()
-	pb.RegisterAddServiceServer(serverInstance,&Server{})
+	pb.RegisterCalculatorServiceServer(serverInstance,&Server{})
 	if err=serverInstance.Serve(listener);err!=nil{
 		log.Fatalf("Failed to listen on %v\n",err)
 	}

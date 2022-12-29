@@ -5,7 +5,7 @@ import(
 	"fmt"
 	pb "github.com/ShyamSundhar1411/Calculator-gRPC/calculator/proto"
 )
-func addFunction(c pb.AddServiceClient){
+func addFunction(c pb.CalculatorServiceClient){
 	log.Println("Add Function was invoked")
 	var firstNumber int64
 	var secondNumber int64

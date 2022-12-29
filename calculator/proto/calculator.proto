@@ -10,7 +10,14 @@ message AddRequest{
 message AddResponse{
     int64 result=1;
 }
-
-service AddService{
-    rpc Add (AddRequest) returns (AddResponse);
+message PrimeRequest{
+    int64 number=1;
 }
+message PrimeResponse{
+    int64 result=1;
+}
+service CalculatorService{
+    rpc Add (AddRequest) returns (AddResponse);
+    rpc PrimeGen (PrimeRequest) returns (stream PrimeResponse);
+}
+
