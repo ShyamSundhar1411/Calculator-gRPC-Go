@@ -19,4 +19,5 @@ func main() {
 	addFunction(client)
 	displayPrimes(client)
 	displayAverage(client)
+	displayMax(client)
 }
