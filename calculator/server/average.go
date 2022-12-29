@@ -12,8 +12,9 @@ func (s *Server) Average(stream pb.CalculatorService_AverageServer) error{
 	for{
 		request,err := stream.Recv()
 		if err==io.EOF{
+			result:=float64(addedSum)/float64(counter)
 			return stream.SendAndClose(&pb.AverageResponse{
-				Result : float64(addedSum/counter),
+				Result : result,
 			})
 		}
 		if err!=nil{

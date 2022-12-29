@@ -18,4 +18,5 @@ func main() {
 	client := pb.NewCalculatorServiceClient(connection)
 	addFunction(client)
 	displayPrimes(client)
+	displayAverage(client)
 }
