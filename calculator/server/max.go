@@ -7,7 +7,7 @@ import (
 )
 
 func (s *Server)Max(stream pb.CalculatorService_MaxServer) error{
-	log.Panicln("Invoked Max Function")
+	log.Println("Invoked Max Function")
 	maximum := int64(0)
 	for{
 		request,err:=stream.Recv()
