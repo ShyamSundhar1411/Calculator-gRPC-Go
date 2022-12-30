@@ -6,6 +6,7 @@ import (
 
 	pb "github.com/ShyamSundhar1411/Calculator-gRPC/calculator/proto"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 var address string = "0.0.0.0:5501"
 
@@ -21,6 +22,7 @@ func main(){
 	log.Printf("Listening on %s\n",address)
 	serverInstance := grpc.NewServer()
 	pb.RegisterCalculatorServiceServer(serverInstance,&Server{})
+	reflection.Register(serverInstance)
 	if err=serverInstance.Serve(listener);err!=nil{
 		log.Fatalf("Failed to listen on %v\n",err)
 	}
