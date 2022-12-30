@@ -28,10 +28,17 @@ message MaxRequest{
 message MaxResponse{
     int64 result=1;
 }
+message SquareRootRequest{
+    int64 number=1;
+}
+message SquareRootResponse{
+    double result=1;
+}
 service CalculatorService{
     rpc Add (AddRequest) returns (AddResponse);
     rpc PrimeGen (PrimeRequest) returns (stream PrimeResponse);
     rpc Average (stream AverageRequest) returns (AverageResponse);
     rpc Max (stream MaxRequest) returns (stream MaxResponse);
+    rpc SquareRoot (SquareRootRequest) returns (SquareRootResponse);
 }
 

@@ -20,4 +20,6 @@ func main() {
 	displayPrimes(client)
 	displayAverage(client)
 	displayMax(client)
+	displaySqrt(client,25)
+	displaySqrt(client,-1)
 }
